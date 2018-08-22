@@ -1,0 +1,26 @@
+---
+
+- hosts: es_master
+  remote_user: siddis14
+  become: yes
+  become_method: sudo
+  connection: ssh
+  tasks:  
+  - name: RedHat - add Elasticsearch repo
+    become: yes
+    template: src=elasticsearch.repo dest=/etc/yum.repos.d/elasticsearch-6.x.repo
+    when: true
+
+  tasks:
+  - name: RedHat - Install Elasticsearch
+    become: yes
+    yum:
+      name: elasticsearch
+      state: present
+      update_cache: yes
+
+  tasks:
+  - name: Starting Elastic Search Service
+    service: 
+      name: elasticsearch
+      state: restarted 
