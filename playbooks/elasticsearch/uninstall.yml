@@ -1,0 +1,16 @@
+---
+
+- hosts: es_master
+  become: yes
+  become_method: sudo
+  connection: ssh
+  tasks:  
+  - name: Remove Elasticsearch repo
+    raw: rm /etc/yum.repos.d/elasticsearch-6.x.repo
+
+  - name: Stop Elastic Search Service
+    service: name=elasticsearch state=stopped
+
+  - name: Uninstall Elasticsearch package
+    yum: pkg=elasticsearch  state=removed update_cache=yes
+
