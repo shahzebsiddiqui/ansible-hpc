@@ -1,7 +1,6 @@
 ---
 
 - hosts: es_master
-#  user: siddis14
   become: yes
   become_method: sudo
   connection: ssh
@@ -9,9 +8,16 @@
   - name: RedHat - add Elasticsearch repo
     template: src=elasticsearch.repo dest=/etc/yum.repos.d/elasticsearch-6.x.repo
     when: true
-
   - name: RedHat - Install Elasticsearch
     yum: pkg=elasticsearch  state=present update_cache=yes
+    register: install_pkg
+  - debug: var=install_pkg
 
-  - name: Starting Elastic Search Service
+  - name:  Enable Service on Boot
+    command: systemctl daemon-reload
+  
+  - name: Restart ElasticSearch Service
     service: name=elasticsearch state=restarted 
+    register: service_restart
+  - debug: var=service_restart
+

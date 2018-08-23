@@ -10,7 +10,11 @@
 
   - name: Stop Elastic Search Service
     service: name=elasticsearch state=stopped
+    register: stop_service
+  - debug: var=stop_service    
 
   - name: Uninstall Elasticsearch package
     yum: pkg=elasticsearch  state=removed update_cache=yes
+    register: remove_pkg
+  - debug: var=remove_pkg
 
