@@ -1,5 +1,6 @@
-[es_master]
-adwnode1.pfizer.com
+[elasticsearch_master_nodes]
+adwnode34.pfizer.com 
+adwnode35.pfizer.com	
 
 [grafana_server]
 adwnode2.pfizer.com
