@@ -1,0 +1,4 @@
+- hosts: grafana_server
+  become: true
+  roles:
+    - grafana

@@ -1,2 +1,5 @@
 [es_master]
 adwnode1.pfizer.com
+
+[grafana_server]
+adwnode2.pfizer.com
