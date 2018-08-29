@@ -5,5 +5,8 @@ adwnode35.pfizer.com
 [elasticsearch_data_nodes]
 adwnode36.pfizer.com
 
+[kibana]
+adwnode34.pfizer.com
+
 [grafana_server]
 adwnode2.pfizer.com
