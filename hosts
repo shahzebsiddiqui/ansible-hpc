@@ -1,9 +1,12 @@
 [elasticsearch_master_nodes]
 adwnode34.pfizer.com 
 adwnode35.pfizer.com	
+adwnode36.pfizer.com
 
 [elasticsearch_data_nodes]
-adwnode36.pfizer.com
+adwnode37.pfizer.com
+adwnode38.pfizer.com
+adwnode39.pfizer.com
 
 [kibana]
 adwnode34.pfizer.com
