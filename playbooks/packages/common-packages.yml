@@ -1,0 +1,26 @@
+---
+packages:
+ - python
+ - python-devel
+ - gcc
+ - gcc-c++
+ - gcc-gfortran
+ - sudo
+ - redhat-lsb
+ - screen
+ - boost-devel
+ - bzip2-devel
+ - kernel-headers
+ - libpng
+ - libpng-devel
+ - libtiff
+ - libtiff-devel
+ - libXext-devel
+ - libXt-devel
+ - motif
+ - motif-debuginfo
+ - motif-devel
+ - motif-static
+ - mcelog
+ - nscd
+
