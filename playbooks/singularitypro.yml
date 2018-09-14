@@ -1,0 +1,19 @@
+--- # Install Singularity Pro
+
+- hosts: localhost
+  connection: ssh
+  gather_facts: no
+  vars:
+    sylabs_repo: "http://repo.sylabs.io/c/3282161a5489820a83b85af73cb6ab80594a459fb93e00ab4aff43ed0fd32727/repo.rpm"
+    singularitypro: "singularitypro26"
+  tasks:
+  - name: Install sylabs repo
+    yum: name={{ sylabs_repo }} state=installed
+  - name: Remove singularity, singularity-devel, singularity-runtime if present
+    yum: name={{ items }} state=absent
+    with_items:
+      - singularity
+      - singularity-runtime
+      - singularity-devel
+  - name: Install singularity pro 
+    yum: name={{ singularitypro }} state=installed
